@@ -1,16 +1,19 @@
-package br.com.zup;
+package br.com.zup.Exemplo2;
 
 public class Funcionarios {
     private String nome;
     private String cpf;
-    private String numRegistro;
+    private String registro;
     private String orgaoLotacao;
     private double salario;
 
-    public Funcionarios(String nome, String cpf, String numRegistro, String orgaoLotacao, double salario) {
+    public Funcionarios() {
+    }
+
+    public Funcionarios(String nome, String cpf, String registro, String orgaoLotacao, double salario) {
         this.nome = nome;
         this.cpf = cpf;
-        this.numRegistro = numRegistro;
+        this.registro = registro;
         this.orgaoLotacao = orgaoLotacao;
         this.salario = salario;
     }
@@ -31,12 +34,12 @@ public class Funcionarios {
         this.cpf = cpf;
     }
 
-    public String getNumRegistro() {
-        return numRegistro;
+    public String getRegistro() {
+        return registro;
     }
 
-    public void setNumRegistro(String numRegistro) {
-        this.numRegistro = numRegistro;
+    public void setRegistro(String registro) {
+        this.registro = registro;
     }
 
     public String getOrgaoLotacao() {
@@ -54,8 +57,19 @@ public class Funcionarios {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    public double aumentaSalario(double aumento){
-        aumento = this.salario * 1.10;
-        return aumento;
+    public double aumentarSalario(){
+        double novoSalario = (0.1 * salario) + salario;
+        return novoSalario;
+    }
+
+    @Override
+    public String toString() {
+      StringBuilder retorno = new StringBuilder();
+      retorno.append("Nome: " +nome);
+      retorno.append("\n CPF: "+cpf);
+      retorno.append("\n Registro: "+registro);
+      retorno.append("\n Orgao de Lotação: "+orgaoLotacao);
+      retorno.append("\n Salário: "+salario);
+      return retorno.toString();
     }
 }

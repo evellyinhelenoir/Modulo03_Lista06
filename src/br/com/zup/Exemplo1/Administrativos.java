@@ -1,4 +1,4 @@
-package br.com.zup;
+package br.com.zup.Exemplo1;
 
 public class Administrativos extends Funcionarios{
     private String funcaoAdm;
@@ -20,11 +20,9 @@ public class Administrativos extends Funcionarios{
         this.senioridade = senioridade;
     }
 
-    public Administrativos(String nome, String cpf, String numRegistro, String orgaoLotacao, double salario, String funcaoAdm, String senioridade) {
-        super(nome, cpf, numRegistro, orgaoLotacao, salario);
+    public Administrativos(String nome, String senioridade, double salario, String funcaoAdm, String senioridade1) {
+        super(nome, senioridade, salario);
         this.funcaoAdm = funcaoAdm;
-        this.senioridade = senioridade;
-
-
+        this.senioridade = senioridade1;
     }
 }
